@@ -1,17 +1,61 @@
-#social_button {
+.social_button {
     cursor: pointer;
-    background: none;
+    background: var(--secondary-accent-color);
     border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 100px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-#social_text {
-    margin-top: 0;
+.social_button:hover {
+    transform: translateY(-5px);
+    background-color: var(--primary-accent-color);
+}
+
+.social_button:hover .social_text {
+    color: var(--secondary-accent-color);
+}
+
+.social_button:hover svg {
+    fill: var(--secondary-accent-color);
+}
+
+.social_text {
+    margin-top: 0.5rem;
     color: var(--text-color);
+    font-size: 1rem;
+    font-family: monospace;
 }
 
 .social {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 4rem;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .social {
+        gap: 1rem;
+    }
+
+    .social_button {
+        width: 80px;
+        padding: 0.8rem;
+    }
+
+    .social_button svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .social_text {
+        font-size: 0.8rem;
+    }
 }

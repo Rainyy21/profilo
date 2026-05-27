@@ -1,36 +1,155 @@
-/* text box and make it so it doesn't overflow out of the box */
-.description {
-    font-family: monospace;
-    font-size: 1.5rem;
-    font-weight: normal;
+/* about page specific styling */
+.box_body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: auto;
     overflow-y: auto;
-    overflow-x: hidden;
-    white-space: normal;
-    word-wrap: break-word;
-    height: inherit;
-    width: inherit;
 }
 
-/* title (contain name, and simple text with icon)  */
-.title_text {
-    padding-bottom: 0rem;
+.about_header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.pfp_placeholder {
+    width: 120px;
+    height: 120px;
+    background: var(--primary-accent-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.pfp_placeholder svg {
+    width: 60px;
+    height: 60px;
+    fill: var(--secondary-accent-color);
 }
 
 .title_text h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    margin: 0;
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.intro_text {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    margin-top: 0.5rem;
+    font-family: monospace;
+}
+
+.description {
+    width: 100%;
+    height: auto;
+}
+
+.about_section {
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.section_title {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border-bottom: 2px solid var(--secondary-accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.section_title h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--primary-accent-color);
+}
+
+.section_title svg {
+    fill: var(--primary-accent-color);
+    width: 28px;
+    height: 28px;
 }
 
 /* education section */
-.brooklyn_college_container {
-    border-left: 3px solid rgba(17, 17, 17, 0.5);
+.education_card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border-left: 5px solid var(--secondary-accent-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.education_detail {
-    padding-left: 4px;
-    font-size: .9rem;
+.education_card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    color: var(--text-color);
+}
+
+.education_card p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    opacity: 0.8;
 }
 
 /* hobby section */
-.hobby_list {
-    font-size: 1.2rem;
+.hobby_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.hobby_item {
+    background: var(--secondary-accent-color);
+    color: var(--text-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    font-family: monospace;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: default;
+}
+
+.hobby_item:hover {
+    transform: scale(1.05);
+    background: var(--primary-accent-color);
+    color: var(--secondary-accent-color);
+}
+
+@media (max-width: 768px) {
+    .about_header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .title_text h1 {
+        font-size: 2rem;
+    }
+
+    .intro_text {
+        font-size: 1.1rem;
+    }
+
+    .section_title h2 {
+        font-size: 1.4rem;
+    }
+
+    .box_body {
+        padding: 1.5rem;
+    }
 }
