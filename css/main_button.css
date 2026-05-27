@@ -1,15 +1,15 @@
-#social_button{
+#social_button {
     cursor: pointer;
     background: none;
     border: none;
-
 }
-#social_text{
+
+#social_text {
     margin-top: 0;
-    color:var(--text-color)
+    color: var(--text-color);
 }
 
-.social{
+.social {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
