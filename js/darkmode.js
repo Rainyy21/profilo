@@ -1,21 +1,35 @@
-let darkmode = localStorage.getItem('dark');
-const switch_button = document.getElementById("theme_switch");
+// Function to apply the theme based on localStorage
+const applyTheme = () => {
+    let darkmode = localStorage.getItem('dark');
+    
+    // Default to 'inactive' (light mode) if no value is set
+    if (darkmode === null) {
+        localStorage.setItem('dark', 'inactive');
+        darkmode = 'inactive';
+    }
 
-const enableDarkmode = () => {
-    document.body.classList.add('dark');
-    localStorage.setItem('dark' , 'active');
-}
-
-const disableDarkmode = () => {
-    document.body.classList.remove('dark');
-     localStorage.removeItem('dark'); 
+    if (darkmode === 'active') {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
 };
 
-if (darkmode === 'active') enableDarkmode();
+// Run on initial load
+applyTheme();
 
-switch_button.addEventListener("click", () => {
-    darkmode = localStorage.getItem('dark');
-    darkmode !== "active" ? enableDarkmode() : disableDarkmode();
+// Set up the toggle button listener
+document.addEventListener('DOMContentLoaded', () => {
+    const switch_button = document.getElementById("theme_switch");
+    if (switch_button) {
+        switch_button.addEventListener("click", () => {
+            const darkmode = localStorage.getItem('dark');
+            if (darkmode !== "active") {
+                localStorage.setItem('dark', 'active');
+            } else {
+                localStorage.setItem('dark', 'inactive');
+            }
+            applyTheme();
+        });
+    }
 });
-
-

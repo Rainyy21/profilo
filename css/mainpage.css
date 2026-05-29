@@ -4,7 +4,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 50vh;
+    flex-grow: 1;
+    padding: 2rem;
 }
 
 /* welcome text and name text color */
@@ -12,6 +13,7 @@
     font-size: 2.5rem;
     font-family: 'Courier New', Courier, monospace;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .main_page_name {
@@ -22,4 +24,19 @@
     font-family: monospace;
     font-size: 1.5rem;
     font-weight: normal;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .title_text {
+        font-size: 1.8rem;
+    }
+
+    .description {
+        font-size: 1.2rem;
+    }
+
+    .box_body {
+        padding: 1rem;
+    }
 }
